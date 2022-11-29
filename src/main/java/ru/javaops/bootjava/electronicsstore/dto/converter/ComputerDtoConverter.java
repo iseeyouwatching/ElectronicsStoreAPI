@@ -25,6 +25,22 @@ public class ComputerDtoConverter {
         return computerEntity;
     }
 
+    public static ComputerEntity convertDtoToEntityForUpdate(CreateUpdateComputerDto createUpdateComputerDto, UUID id) {
+        ComputerEntity computerEntity =  new ComputerEntity();
+        ProductEntity productEntity = new ProductEntity();
+
+        productEntity.setSeriesNumber(createUpdateComputerDto.getSeriesNumber());
+        productEntity.setFabricator(createUpdateComputerDto.getFabricator());
+        productEntity.setPrice(createUpdateComputerDto.getPrice());
+        productEntity.setNumberOfUnitsInStock(createUpdateComputerDto.getNumberOfUnitsInStock());
+
+        computerEntity.setId(id);
+        computerEntity.setGeneralProperties(productEntity);
+        computerEntity.setFormFactor(createUpdateComputerDto.getFormFactor());
+
+        return computerEntity;
+    }
+
     public static ComputerDto convertEntityToDto(ComputerEntity computerEntity) {
         ComputerDto computerDto = new ComputerDto();
 
@@ -37,5 +53,6 @@ public class ComputerDtoConverter {
 
         return computerDto;
     }
+
 
 }
