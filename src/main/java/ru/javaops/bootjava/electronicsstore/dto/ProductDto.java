@@ -1,7 +1,5 @@
 package ru.javaops.bootjava.electronicsstore.dto;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,7 +11,7 @@ import java.util.UUID;
 @AllArgsConstructor
 public class ProductDto {
 
-    private UUID uuid;
+    private UUID id;
     private String seriesNumber;
     private String fabricator;
     private Integer price;
