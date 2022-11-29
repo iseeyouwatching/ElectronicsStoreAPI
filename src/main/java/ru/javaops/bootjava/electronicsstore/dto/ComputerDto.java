@@ -1,30 +1,22 @@
-package ru.javaops.bootjava.electronicsstore.model.entity;
+package ru.javaops.bootjava.electronicsstore.dto;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import ru.javaops.bootjava.electronicsstore.model.enumeration.ComputerFormFactor;
 
 import java.util.UUID;
 
-@Entity
-@Table(name = "product")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProductEntity {
+public class ComputerDto {
 
-    @Id
-    @GeneratedValue
     private UUID id;
-
-    @Column(name = "series_number")
     private String seriesNumber;
-
     private String fabricator;
-
     private Integer price;
-
-    @Column(name = "number_of_units_in_stock")
     private Integer numberOfUnitsInStock;
+    private ComputerFormFactor formFactor;
+
 }
