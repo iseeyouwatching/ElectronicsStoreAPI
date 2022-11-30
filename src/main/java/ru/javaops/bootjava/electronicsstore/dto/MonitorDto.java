@@ -1,0 +1,21 @@
+package ru.javaops.bootjava.electronicsstore.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.UUID;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class MonitorDto {
+
+    private UUID id;
+    private String seriesNumber;
+    private String fabricator;
+    private Integer price;
+    private Integer numberOfUnitsInStock;
+    private double diagonal;
+
+}
