@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import ru.javaops.bootjava.electronicsstore.dto.ComputerDto;
 import ru.javaops.bootjava.electronicsstore.dto.CreateUpdateComputerDto;
 import ru.javaops.bootjava.electronicsstore.dto.converter.ComputerDtoConverter;
-import ru.javaops.bootjava.electronicsstore.exception.ComputerNotFoundException;
+import ru.javaops.bootjava.electronicsstore.exception.NotFoundException;
 import ru.javaops.bootjava.electronicsstore.entity.ComputerEntity;
 import ru.javaops.bootjava.electronicsstore.repository.ComputerRepository;
 
@@ -52,7 +52,7 @@ public class ComputerService {
 
     public ComputerEntity getComputerEntityById(UUID id) {
         return computerRepository.findById(id)
-                .orElseThrow(() -> new ComputerNotFoundException("Computer with id " + id + " does not exists"));
+                .orElseThrow(() -> new NotFoundException("Computer with id " + id + " does not exists"));
     }
 
     public List<ComputerDto> getAllComputers() {

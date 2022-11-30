@@ -6,7 +6,7 @@ import ru.javaops.bootjava.electronicsstore.dto.CreateUpdateMonitorDto;
 import ru.javaops.bootjava.electronicsstore.dto.MonitorDto;
 import ru.javaops.bootjava.electronicsstore.dto.converter.MonitorDtoConverter;
 import ru.javaops.bootjava.electronicsstore.entity.MonitorEntity;
-import ru.javaops.bootjava.electronicsstore.exception.MonitorNotFoundException;
+import ru.javaops.bootjava.electronicsstore.exception.NotFoundException;
 import ru.javaops.bootjava.electronicsstore.repository.MonitorRepository;
 
 import java.util.ArrayList;
@@ -53,7 +53,7 @@ public class MonitorService {
 
     public MonitorEntity getMonitorEntityById(UUID id) {
         return monitorRepository.findById(id)
-                .orElseThrow(() -> new MonitorNotFoundException("Monitor with id " + id + " does not exists"));
+                .orElseThrow(() -> new NotFoundException("Monitor with id " + id + " does not exists"));
     }
 
     public List<MonitorDto> getAllMonitors() {

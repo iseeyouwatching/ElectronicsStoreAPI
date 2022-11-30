@@ -6,7 +6,7 @@ import ru.javaops.bootjava.electronicsstore.dto.CreateUpdateHardDriveDto;
 import ru.javaops.bootjava.electronicsstore.dto.HardDriveDto;
 import ru.javaops.bootjava.electronicsstore.dto.converter.HardDriveDtoConverter;
 import ru.javaops.bootjava.electronicsstore.entity.HardDriveEntity;
-import ru.javaops.bootjava.electronicsstore.exception.ComputerNotFoundException;
+import ru.javaops.bootjava.electronicsstore.exception.NotFoundException;
 import ru.javaops.bootjava.electronicsstore.repository.HardDriveRepository;
 
 import java.util.ArrayList;
@@ -53,7 +53,7 @@ public class HardDriveService {
 
     public HardDriveEntity getHardDriveEntityById(UUID id) {
         return hardDriveRepository.findById(id)
-                .orElseThrow(() -> new ComputerNotFoundException("Hard drive with id " + id + " does not exists"));
+                .orElseThrow(() -> new NotFoundException("Hard drive with id " + id + " does not exists"));
     }
 
     public List<HardDriveDto> getAllHardDrives() {

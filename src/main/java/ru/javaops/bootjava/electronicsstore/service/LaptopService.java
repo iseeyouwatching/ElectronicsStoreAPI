@@ -6,7 +6,7 @@ import ru.javaops.bootjava.electronicsstore.dto.CreateUpdateLaptopDto;
 import ru.javaops.bootjava.electronicsstore.dto.LaptopDto;
 import ru.javaops.bootjava.electronicsstore.dto.converter.LaptopDtoConverter;
 import ru.javaops.bootjava.electronicsstore.entity.LaptopEntity;
-import ru.javaops.bootjava.electronicsstore.exception.LaptopNotFoundException;
+import ru.javaops.bootjava.electronicsstore.exception.NotFoundException;
 import ru.javaops.bootjava.electronicsstore.repository.LaptopRepository;
 
 import java.util.ArrayList;
@@ -53,7 +53,7 @@ public class LaptopService {
 
     public LaptopEntity getLaptopEntityById(UUID id) {
         return laptopRepository.findById(id)
-                .orElseThrow(() -> new LaptopNotFoundException("Laptop with id " + id + " does not exists"));
+                .orElseThrow(() -> new NotFoundException("Laptop with id " + id + " does not exists"));
     }
 
     public List<LaptopDto> getAllLaptops() {
