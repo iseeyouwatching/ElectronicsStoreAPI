@@ -3,7 +3,7 @@ package ru.javaops.bootjava.electronicsstore.dto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import ru.javaops.bootjava.electronicsstore.model.enumeration.ComputerFormFactor;
+import ru.javaops.bootjava.electronicsstore.enumeration.ComputerFormFactor;
 
 import java.util.UUID;
 

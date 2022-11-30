@@ -37,7 +37,7 @@ public class ComputerController {
         computerService.deleteComputerById(computerId);
     }
 
-    @Operation(summary = "Update computer details")
+    @Operation(summary = "Update computer properties")
     @PutMapping(path = "{id}")
     public ComputerDto updateDetailsOfComputer(@PathVariable("id") UUID computerId, @RequestBody CreateUpdateComputerDto createUpdateComputerDto) {
         return computerService.updateComputer(computerId, createUpdateComputerDto);

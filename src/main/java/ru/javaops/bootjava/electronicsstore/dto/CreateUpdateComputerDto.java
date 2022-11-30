@@ -1,7 +1,7 @@
 package ru.javaops.bootjava.electronicsstore.dto;
 
 import lombok.Data;
-import ru.javaops.bootjava.electronicsstore.model.enumeration.ComputerFormFactor;
+import ru.javaops.bootjava.electronicsstore.enumeration.ComputerFormFactor;
 
 @Data
 public class CreateUpdateComputerDto {
