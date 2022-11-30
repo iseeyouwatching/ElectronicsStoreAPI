@@ -1,26 +1,25 @@
-package ru.javaops.bootjava.electronicsstore.model.entity;
+package ru.javaops.bootjava.electronicsstore.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import ru.javaops.bootjava.electronicsstore.model.enumeration.ComputerFormFactor;
+import ru.javaops.bootjava.electronicsstore.enumeration.LaptopSize;
 
 import java.util.UUID;
 
 @Entity
-@Table(name = "computer")
+@Table(name = "laptop")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ComputerEntity {
+public class LaptopEntity {
 
     @Id
     @GeneratedValue
     private UUID id;
 
-    @Column(name = "form_factor")
-    private ComputerFormFactor formFactor;
+    private LaptopSize size;
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "product_id")

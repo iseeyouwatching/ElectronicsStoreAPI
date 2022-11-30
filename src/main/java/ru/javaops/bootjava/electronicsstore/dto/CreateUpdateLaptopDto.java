@@ -1,15 +1,15 @@
 package ru.javaops.bootjava.electronicsstore.dto;
 
 import lombok.Data;
-import ru.javaops.bootjava.electronicsstore.enumeration.ComputerFormFactor;
+import ru.javaops.bootjava.electronicsstore.enumeration.LaptopSize;
 
 @Data
-public class CreateUpdateComputerDto {
+public class CreateUpdateLaptopDto {
 
     private String seriesNumber;
     private String fabricator;
     private Integer price;
     private Integer numberOfUnitsInStock;
-    private ComputerFormFactor formFactor;
+    private LaptopSize size;
 
 }

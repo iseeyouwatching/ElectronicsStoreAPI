@@ -1,4 +1,4 @@
-package ru.javaops.bootjava.electronicsstore.model.entity;
+package ru.javaops.bootjava.electronicsstore.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

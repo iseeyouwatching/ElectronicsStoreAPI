@@ -6,7 +6,7 @@ import ru.javaops.bootjava.electronicsstore.dto.ComputerDto;
 import ru.javaops.bootjava.electronicsstore.dto.CreateUpdateComputerDto;
 import ru.javaops.bootjava.electronicsstore.dto.converter.ComputerDtoConverter;
 import ru.javaops.bootjava.electronicsstore.exception.ComputerNotFoundException;
-import ru.javaops.bootjava.electronicsstore.model.entity.ComputerEntity;
+import ru.javaops.bootjava.electronicsstore.entity.ComputerEntity;
 import ru.javaops.bootjava.electronicsstore.repository.ComputerRepository;
 
 import java.util.ArrayList;
