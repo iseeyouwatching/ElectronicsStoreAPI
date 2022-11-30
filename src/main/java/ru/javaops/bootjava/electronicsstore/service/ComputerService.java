@@ -21,7 +21,6 @@ public class ComputerService {
 
     public ComputerDto addComputer(CreateUpdateComputerDto createUpdateComputerDto) {
         ComputerEntity computerEntity = ComputerDtoConverter.convertDtoToEntity(createUpdateComputerDto);
-
         computerEntity = computerRepository.save(computerEntity);
 
         return ComputerDtoConverter.convertEntityToDto(computerEntity);

@@ -18,11 +18,10 @@ public class ProductEntity {
     @GeneratedValue
     private UUID id;
 
-    @Column(name = "series_number")
+    @Column(name = "series_number", unique = true)
     private String seriesNumber;
 
     private String fabricator;
-
     private Integer price;
 
     @Column(name = "number_of_units_in_stock")
