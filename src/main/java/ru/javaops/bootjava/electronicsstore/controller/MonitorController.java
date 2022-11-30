@@ -2,6 +2,7 @@ package ru.javaops.bootjava.electronicsstore.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import ru.javaops.bootjava.electronicsstore.dto.CreateUpdateMonitorDto;
@@ -27,7 +28,7 @@ public class MonitorController {
 
     @Operation(summary = "Add monitor")
     @PostMapping
-    public MonitorDto addMonitor(@RequestBody CreateUpdateMonitorDto createUpdateMonitorDto) {
+    public MonitorDto addMonitor(@RequestBody @Valid CreateUpdateMonitorDto createUpdateMonitorDto) {
         return monitorService.addMonitor(createUpdateMonitorDto);
     }
 
@@ -39,7 +40,7 @@ public class MonitorController {
 
     @Operation(summary = "Update monitor properties")
     @PutMapping(path = "{id}")
-    public MonitorDto updateDetailsOfMonitor(@PathVariable("id") UUID monitorId, @RequestBody CreateUpdateMonitorDto createUpdateMonitorDto) {
+    public MonitorDto updateDetailsOfMonitor(@PathVariable("id") UUID monitorId, @RequestBody @Valid CreateUpdateMonitorDto createUpdateMonitorDto) {
         return monitorService.updateMonitor(monitorId, createUpdateMonitorDto);
     }
 
