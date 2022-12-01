@@ -7,7 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import ru.javaops.bootjava.electronicsstore.dto.ComputerDto;
 import ru.javaops.bootjava.electronicsstore.dto.CreateUpdateComputerDto;
-import ru.javaops.bootjava.electronicsstore.service.ComputerService;
+import ru.javaops.bootjava.electronicsstore.service.implementation.ComputerService;
 
 import java.util.List;
 import java.util.UUID;
@@ -40,7 +40,7 @@ public class ComputerController {
 
     @Operation(summary = "Update computer properties")
     @PutMapping(path = "{id}")
-    public ComputerDto updateDetailsOfComputer(@PathVariable("id") UUID computerId, @RequestBody @Valid CreateUpdateComputerDto createUpdateComputerDto) {
+    public ComputerDto updateDetailsOfComputer(@PathVariable("id") UUID computerId, @RequestBody @Valid CreateUpdateComputerDto createUpdateComputerDto){
         return computerService.updateComputer(computerId, createUpdateComputerDto);
     }
 

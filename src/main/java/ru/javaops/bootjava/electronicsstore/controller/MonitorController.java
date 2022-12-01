@@ -7,7 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import ru.javaops.bootjava.electronicsstore.dto.CreateUpdateMonitorDto;
 import ru.javaops.bootjava.electronicsstore.dto.MonitorDto;
-import ru.javaops.bootjava.electronicsstore.service.MonitorService;
+import ru.javaops.bootjava.electronicsstore.service.implementation.MonitorService;
 
 import java.util.List;
 import java.util.UUID;

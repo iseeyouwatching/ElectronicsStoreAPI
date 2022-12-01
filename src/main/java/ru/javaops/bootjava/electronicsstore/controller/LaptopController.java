@@ -7,7 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import ru.javaops.bootjava.electronicsstore.dto.CreateUpdateLaptopDto;
 import ru.javaops.bootjava.electronicsstore.dto.LaptopDto;
-import ru.javaops.bootjava.electronicsstore.service.LaptopService;
+import ru.javaops.bootjava.electronicsstore.service.implementation.LaptopService;
 
 import java.util.List;
 import java.util.UUID;

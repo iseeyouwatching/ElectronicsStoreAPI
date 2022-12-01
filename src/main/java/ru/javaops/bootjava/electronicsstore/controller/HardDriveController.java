@@ -7,7 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import ru.javaops.bootjava.electronicsstore.dto.CreateUpdateHardDriveDto;
 import ru.javaops.bootjava.electronicsstore.dto.HardDriveDto;
-import ru.javaops.bootjava.electronicsstore.service.HardDriveService;
+import ru.javaops.bootjava.electronicsstore.service.implementation.HardDriveService;
 
 import java.util.List;
 import java.util.UUID;

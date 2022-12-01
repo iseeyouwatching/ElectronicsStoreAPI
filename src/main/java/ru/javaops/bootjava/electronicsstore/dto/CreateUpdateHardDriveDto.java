@@ -8,7 +8,6 @@ import lombok.Data;
 @Data
 public class CreateUpdateHardDriveDto {
 
-    @NotNull(message = "Series number should not be null")
     @Size(min = 1, message = "Series number should have at least 1 character")
     private String seriesNumber;
 
