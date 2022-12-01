@@ -2,11 +2,12 @@ package ru.javaops.bootjava.electronicsstore.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import ru.javaops.bootjava.electronicsstore.dto.CreateUpdateHardDriveDto;
-import ru.javaops.bootjava.electronicsstore.dto.HardDriveDto;
-import ru.javaops.bootjava.electronicsstore.service.HardDriveService;
+import ru.javaops.bootjava.electronicsstore.model.dto.CreateUpdateHardDriveDto;
+import ru.javaops.bootjava.electronicsstore.model.dto.HardDriveDto;
+import ru.javaops.bootjava.electronicsstore.service.implementation.HardDriveService;
 
 import java.util.List;
 import java.util.UUID;
@@ -27,7 +28,7 @@ public class HardDriveController {
 
     @Operation(summary = "Add hard drive")
     @PostMapping
-    public HardDriveDto addHardDrive(@RequestBody CreateUpdateHardDriveDto createUpdateHardDriveDto) {
+    public HardDriveDto addHardDrive(@RequestBody @Valid CreateUpdateHardDriveDto createUpdateHardDriveDto) {
         return hardDriveService.addHardDrive(createUpdateHardDriveDto);
     }
 
@@ -39,7 +40,7 @@ public class HardDriveController {
 
     @Operation(summary = "Update hard drive properties")
     @PutMapping(path = "{id}")
-    public HardDriveDto updateDetailsOfHardDrive(@PathVariable("id") UUID hardDriveId, @RequestBody CreateUpdateHardDriveDto createUpdateHardDriveDto) {
+    public HardDriveDto updateDetailsOfHardDrive(@PathVariable("id") UUID hardDriveId, @RequestBody @Valid CreateUpdateHardDriveDto createUpdateHardDriveDto) {
         return hardDriveService.updateHardDrive(hardDriveId, createUpdateHardDriveDto);
     }
 

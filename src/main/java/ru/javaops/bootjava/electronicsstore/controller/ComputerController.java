@@ -2,11 +2,12 @@
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import ru.javaops.bootjava.electronicsstore.dto.ComputerDto;
-import ru.javaops.bootjava.electronicsstore.dto.CreateUpdateComputerDto;
-import ru.javaops.bootjava.electronicsstore.service.ComputerService;
+import ru.javaops.bootjava.electronicsstore.model.dto.ComputerDto;
+import ru.javaops.bootjava.electronicsstore.model.dto.CreateUpdateComputerDto;
+import ru.javaops.bootjava.electronicsstore.service.implementation.ComputerService;
 
 import java.util.List;
 import java.util.UUID;
@@ -27,7 +28,7 @@ public class ComputerController {
 
     @Operation(summary = "Add computer")
     @PostMapping
-    public ComputerDto addComputer(@RequestBody CreateUpdateComputerDto createUpdateComputerDto) {
+    public ComputerDto addComputer(@RequestBody @Valid CreateUpdateComputerDto createUpdateComputerDto) {
         return computerService.addComputer(createUpdateComputerDto);
     }
 
@@ -39,7 +40,7 @@ public class ComputerController {
 
     @Operation(summary = "Update computer properties")
     @PutMapping(path = "{id}")
-    public ComputerDto updateDetailsOfComputer(@PathVariable("id") UUID computerId, @RequestBody CreateUpdateComputerDto createUpdateComputerDto) {
+    public ComputerDto updateDetailsOfComputer(@PathVariable("id") UUID computerId, @RequestBody @Valid CreateUpdateComputerDto createUpdateComputerDto){
         return computerService.updateComputer(computerId, createUpdateComputerDto);
     }
 

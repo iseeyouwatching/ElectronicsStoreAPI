@@ -2,11 +2,12 @@ package ru.javaops.bootjava.electronicsstore.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import ru.javaops.bootjava.electronicsstore.dto.CreateUpdateLaptopDto;
-import ru.javaops.bootjava.electronicsstore.dto.LaptopDto;
-import ru.javaops.bootjava.electronicsstore.service.LaptopService;
+import ru.javaops.bootjava.electronicsstore.model.dto.CreateUpdateLaptopDto;
+import ru.javaops.bootjava.electronicsstore.model.dto.LaptopDto;
+import ru.javaops.bootjava.electronicsstore.service.implementation.LaptopService;
 
 import java.util.List;
 import java.util.UUID;
@@ -27,7 +28,7 @@ public class LaptopController {
 
     @Operation(summary = "Add laptop")
     @PostMapping
-    public LaptopDto addLaptop(@RequestBody CreateUpdateLaptopDto createUpdateLaptopDto) {
+    public LaptopDto addLaptop(@RequestBody @Valid CreateUpdateLaptopDto createUpdateLaptopDto) {
         return laptopService.addLaptop(createUpdateLaptopDto);
     }
 
@@ -39,7 +40,7 @@ public class LaptopController {
 
     @Operation(summary = "Update laptop properties")
     @PutMapping(path = "{id}")
-    public LaptopDto updateDetailsOfLaptop(@PathVariable("id") UUID laptopId, @RequestBody CreateUpdateLaptopDto createUpdateLaptopDto) {
+    public LaptopDto updateDetailsOfLaptop(@PathVariable("id") UUID laptopId, @RequestBody @Valid CreateUpdateLaptopDto createUpdateLaptopDto) {
         return laptopService.updateLaptop(laptopId, createUpdateLaptopDto);
     }
 
