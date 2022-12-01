@@ -1,4 +1,4 @@
-package ru.javaops.bootjava.electronicsstore.service;
+package ru.javaops.bootjava.electronicsstore.service.implementation;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -8,6 +8,7 @@ import ru.javaops.bootjava.electronicsstore.dto.converter.MonitorDtoConverter;
 import ru.javaops.bootjava.electronicsstore.entity.MonitorEntity;
 import ru.javaops.bootjava.electronicsstore.exception.NotFoundException;
 import ru.javaops.bootjava.electronicsstore.repository.MonitorRepository;
+import ru.javaops.bootjava.electronicsstore.service.IMonitorService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +16,7 @@ import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
-public class MonitorService {
+public class MonitorService implements IMonitorService {
 
     private final MonitorRepository monitorRepository;
 
@@ -29,7 +30,7 @@ public class MonitorService {
     public void deleteMonitorById(UUID id) {
         boolean exists = monitorRepository.existsById(id);
         if (!exists) {
-            throw new IllegalStateException("Monitor with id " + id + " does not exists");
+            throw new NotFoundException("Monitor with id " + id + " does not exists");
         }
         monitorRepository.deleteById(id);
     }
@@ -37,7 +38,7 @@ public class MonitorService {
     public MonitorDto updateMonitor(UUID id, CreateUpdateMonitorDto createUpdateMonitorDto) {
         boolean exists = monitorRepository.existsById(id);
         if (!exists) {
-            throw new IllegalStateException("Monitor with id " + id + " does not exists");
+            throw new NotFoundException("Monitor with id " + id + " does not exists");
         }
         MonitorEntity monitorEntity = MonitorDtoConverter.convertDtoToEntityForUpdate(createUpdateMonitorDto, id);
         monitorEntity = monitorRepository.save(monitorEntity);

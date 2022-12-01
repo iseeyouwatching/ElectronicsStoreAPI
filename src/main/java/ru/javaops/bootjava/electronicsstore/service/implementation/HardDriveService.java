@@ -1,4 +1,4 @@
-package ru.javaops.bootjava.electronicsstore.service;
+package ru.javaops.bootjava.electronicsstore.service.implementation;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -8,6 +8,7 @@ import ru.javaops.bootjava.electronicsstore.dto.converter.HardDriveDtoConverter;
 import ru.javaops.bootjava.electronicsstore.entity.HardDriveEntity;
 import ru.javaops.bootjava.electronicsstore.exception.NotFoundException;
 import ru.javaops.bootjava.electronicsstore.repository.HardDriveRepository;
+import ru.javaops.bootjava.electronicsstore.service.IHardDriveService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +16,7 @@ import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
-public class HardDriveService {
+public class HardDriveService implements IHardDriveService {
 
     private final HardDriveRepository hardDriveRepository;
 
@@ -29,7 +30,7 @@ public class HardDriveService {
     public void deleteHardDriveById(UUID id) {
         boolean exists = hardDriveRepository.existsById(id);
         if (!exists) {
-            throw new IllegalStateException("Hard drive with id " + id + " does not exists");
+            throw new NotFoundException("Hard drive with id " + id + " does not exists");
         }
         hardDriveRepository.deleteById(id);
     }
@@ -37,7 +38,7 @@ public class HardDriveService {
     public HardDriveDto updateHardDrive(UUID id, CreateUpdateHardDriveDto createUpdateHardDriveDto) {
         boolean exists = hardDriveRepository.existsById(id);
         if (!exists) {
-            throw new IllegalStateException("Hard drive with id " + id + " does not exists");
+            throw new NotFoundException("Hard drive with id " + id + " does not exists");
         }
         HardDriveEntity hardDriveEntity = HardDriveDtoConverter.convertDtoToEntityForUpdate(createUpdateHardDriveDto, id);
         hardDriveEntity = hardDriveRepository.save(hardDriveEntity);

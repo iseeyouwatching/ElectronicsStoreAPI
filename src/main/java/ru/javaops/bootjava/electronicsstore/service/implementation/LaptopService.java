@@ -1,4 +1,4 @@
-package ru.javaops.bootjava.electronicsstore.service;
+package ru.javaops.bootjava.electronicsstore.service.implementation;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -8,6 +8,7 @@ import ru.javaops.bootjava.electronicsstore.dto.converter.LaptopDtoConverter;
 import ru.javaops.bootjava.electronicsstore.entity.LaptopEntity;
 import ru.javaops.bootjava.electronicsstore.exception.NotFoundException;
 import ru.javaops.bootjava.electronicsstore.repository.LaptopRepository;
+import ru.javaops.bootjava.electronicsstore.service.ILaptopService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +16,7 @@ import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
-public class LaptopService {
+public class LaptopService implements ILaptopService {
 
     private final LaptopRepository laptopRepository;
 
@@ -29,7 +30,7 @@ public class LaptopService {
     public void deleteLaptopById(UUID id) {
         boolean exists = laptopRepository.existsById(id);
         if (!exists) {
-            throw new IllegalStateException("Laptop with id " + id + " does not exists");
+            throw new NotFoundException("Laptop with id " + id + " does not exists");
         }
         laptopRepository.deleteById(id);
     }
@@ -37,7 +38,7 @@ public class LaptopService {
     public LaptopDto updateLaptop(UUID id, CreateUpdateLaptopDto createUpdateLaptopDto) {
         boolean exists = laptopRepository.existsById(id);
         if (!exists) {
-            throw new IllegalStateException("Laptop with id " + id + " does not exists");
+            throw new NotFoundException("Laptop with id " + id + " does not exists");
         }
         LaptopEntity laptopEntity = LaptopDtoConverter.convertDtoToEntityForUpdate(createUpdateLaptopDto, id);
         laptopEntity = laptopRepository.save(laptopEntity);

@@ -1,4 +1,4 @@
-package ru.javaops.bootjava.electronicsstore.service;
+package ru.javaops.bootjava.electronicsstore.service.implementation;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -8,14 +8,16 @@ import ru.javaops.bootjava.electronicsstore.dto.converter.ComputerDtoConverter;
 import ru.javaops.bootjava.electronicsstore.exception.NotFoundException;
 import ru.javaops.bootjava.electronicsstore.entity.ComputerEntity;
 import ru.javaops.bootjava.electronicsstore.repository.ComputerRepository;
+import ru.javaops.bootjava.electronicsstore.service.IComputerService;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
-public class ComputerService {
+public class ComputerService implements IComputerService {
 
     private final ComputerRepository computerRepository;
 
@@ -29,7 +31,7 @@ public class ComputerService {
     public void deleteComputerById(UUID id) {
         boolean exists = computerRepository.existsById(id);
         if (!exists) {
-            throw new IllegalStateException("Computer with id " + id + " does not exists");
+            throw new NotFoundException("Computer with id " + id + " does not exists");
         }
         computerRepository.deleteById(id);
     }
@@ -37,10 +39,11 @@ public class ComputerService {
     public ComputerDto updateComputer(UUID id, CreateUpdateComputerDto createUpdateComputerDto) {
         boolean exists = computerRepository.existsById(id);
         if (!exists) {
-            throw new IllegalStateException("Computer with id " + id + " does not exists");
+            throw new NotFoundException("Computer with id " + id + " does not exists");
         }
         ComputerEntity computerEntity = ComputerDtoConverter.convertDtoToEntityForUpdate(createUpdateComputerDto, id);
         computerEntity = computerRepository.save(computerEntity);
+
         return ComputerDtoConverter.convertEntityToDto(computerEntity);
     }
 
