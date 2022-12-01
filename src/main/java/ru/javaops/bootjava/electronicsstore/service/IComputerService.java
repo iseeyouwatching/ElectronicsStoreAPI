@@ -1,8 +1,8 @@
 package ru.javaops.bootjava.electronicsstore.service;
 
-import ru.javaops.bootjava.electronicsstore.dto.ComputerDto;
-import ru.javaops.bootjava.electronicsstore.dto.CreateUpdateComputerDto;
-import ru.javaops.bootjava.electronicsstore.entity.ComputerEntity;
+import ru.javaops.bootjava.electronicsstore.model.dto.ComputerDto;
+import ru.javaops.bootjava.electronicsstore.model.dto.CreateUpdateComputerDto;
+import ru.javaops.bootjava.electronicsstore.model.entity.ComputerEntity;
 
 import java.util.List;
 import java.util.UUID;

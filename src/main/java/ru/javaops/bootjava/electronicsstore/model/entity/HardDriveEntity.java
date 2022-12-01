@@ -1,7 +1,6 @@
-package ru.javaops.bootjava.electronicsstore.entity;
+package ru.javaops.bootjava.electronicsstore.model.entity;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Min;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,17 +8,17 @@ import lombok.NoArgsConstructor;
 import java.util.UUID;
 
 @Entity
-@Table(name = "monitor")
+@Table(name = "hard_drive")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class MonitorEntity {
+public class HardDriveEntity {
 
     @Id
     @GeneratedValue
     private UUID id;
 
-    private double diagonal;
+    private String capacity;
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "product_id")

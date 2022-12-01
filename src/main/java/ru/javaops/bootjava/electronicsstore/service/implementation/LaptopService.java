@@ -2,10 +2,10 @@ package ru.javaops.bootjava.electronicsstore.service.implementation;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.javaops.bootjava.electronicsstore.dto.CreateUpdateLaptopDto;
-import ru.javaops.bootjava.electronicsstore.dto.LaptopDto;
-import ru.javaops.bootjava.electronicsstore.dto.converter.LaptopDtoConverter;
-import ru.javaops.bootjava.electronicsstore.entity.LaptopEntity;
+import ru.javaops.bootjava.electronicsstore.model.dto.CreateUpdateLaptopDto;
+import ru.javaops.bootjava.electronicsstore.model.dto.LaptopDto;
+import ru.javaops.bootjava.electronicsstore.model.converter.LaptopDtoConverter;
+import ru.javaops.bootjava.electronicsstore.model.entity.LaptopEntity;
 import ru.javaops.bootjava.electronicsstore.exception.NotFoundException;
 import ru.javaops.bootjava.electronicsstore.repository.LaptopRepository;
 import ru.javaops.bootjava.electronicsstore.service.ILaptopService;

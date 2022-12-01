@@ -5,8 +5,8 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import ru.javaops.bootjava.electronicsstore.dto.CreateUpdateHardDriveDto;
-import ru.javaops.bootjava.electronicsstore.dto.HardDriveDto;
+import ru.javaops.bootjava.electronicsstore.model.dto.CreateUpdateHardDriveDto;
+import ru.javaops.bootjava.electronicsstore.model.dto.HardDriveDto;
 import ru.javaops.bootjava.electronicsstore.service.implementation.HardDriveService;
 
 import java.util.List;

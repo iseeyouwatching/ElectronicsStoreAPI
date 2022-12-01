@@ -1,4 +1,4 @@
-package ru.javaops.bootjava.electronicsstore.enumeration;
+package ru.javaops.bootjava.electronicsstore.model.enumeration;
 
 public enum LaptopSize {
 

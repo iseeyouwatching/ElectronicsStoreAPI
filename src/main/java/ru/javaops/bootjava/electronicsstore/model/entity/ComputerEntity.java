@@ -1,10 +1,10 @@
-package ru.javaops.bootjava.electronicsstore.entity;
+package ru.javaops.bootjava.electronicsstore.model.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import ru.javaops.bootjava.electronicsstore.enumeration.ComputerFormFactor;
+import ru.javaops.bootjava.electronicsstore.model.enumeration.ComputerFormFactor;
 
 import java.util.UUID;
 

@@ -1,9 +1,9 @@
-package ru.javaops.bootjava.electronicsstore.dto.converter;
+package ru.javaops.bootjava.electronicsstore.model.converter;
 
-import ru.javaops.bootjava.electronicsstore.dto.CreateUpdateLaptopDto;
-import ru.javaops.bootjava.electronicsstore.dto.LaptopDto;
-import ru.javaops.bootjava.electronicsstore.entity.LaptopEntity;
-import ru.javaops.bootjava.electronicsstore.entity.ProductEntity;
+import ru.javaops.bootjava.electronicsstore.model.dto.CreateUpdateLaptopDto;
+import ru.javaops.bootjava.electronicsstore.model.dto.LaptopDto;
+import ru.javaops.bootjava.electronicsstore.model.entity.LaptopEntity;
+import ru.javaops.bootjava.electronicsstore.model.entity.ProductEntity;
 
 import java.util.UUID;
 

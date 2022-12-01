@@ -1,8 +1,8 @@
 package ru.javaops.bootjava.electronicsstore.service;
 
-import ru.javaops.bootjava.electronicsstore.dto.CreateUpdateLaptopDto;
-import ru.javaops.bootjava.electronicsstore.dto.LaptopDto;
-import ru.javaops.bootjava.electronicsstore.entity.LaptopEntity;
+import ru.javaops.bootjava.electronicsstore.model.dto.CreateUpdateLaptopDto;
+import ru.javaops.bootjava.electronicsstore.model.dto.LaptopDto;
+import ru.javaops.bootjava.electronicsstore.model.entity.LaptopEntity;
 
 import java.util.List;
 import java.util.UUID;

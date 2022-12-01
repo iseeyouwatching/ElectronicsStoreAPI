@@ -1,8 +1,8 @@
 package ru.javaops.bootjava.electronicsstore.service;
 
-import ru.javaops.bootjava.electronicsstore.dto.CreateUpdateHardDriveDto;
-import ru.javaops.bootjava.electronicsstore.dto.HardDriveDto;
-import ru.javaops.bootjava.electronicsstore.entity.HardDriveEntity;
+import ru.javaops.bootjava.electronicsstore.model.dto.CreateUpdateHardDriveDto;
+import ru.javaops.bootjava.electronicsstore.model.dto.HardDriveDto;
+import ru.javaops.bootjava.electronicsstore.model.entity.HardDriveEntity;
 
 import java.util.List;
 import java.util.UUID;

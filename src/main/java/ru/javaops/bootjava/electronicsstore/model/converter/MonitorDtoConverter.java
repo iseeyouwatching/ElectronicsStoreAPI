@@ -1,9 +1,9 @@
-package ru.javaops.bootjava.electronicsstore.dto.converter;
+package ru.javaops.bootjava.electronicsstore.model.converter;
 
-import ru.javaops.bootjava.electronicsstore.dto.CreateUpdateMonitorDto;
-import ru.javaops.bootjava.electronicsstore.dto.MonitorDto;
-import ru.javaops.bootjava.electronicsstore.entity.MonitorEntity;
-import ru.javaops.bootjava.electronicsstore.entity.ProductEntity;
+import ru.javaops.bootjava.electronicsstore.model.dto.CreateUpdateMonitorDto;
+import ru.javaops.bootjava.electronicsstore.model.dto.MonitorDto;
+import ru.javaops.bootjava.electronicsstore.model.entity.MonitorEntity;
+import ru.javaops.bootjava.electronicsstore.model.entity.ProductEntity;
 
 import java.util.UUID;
 

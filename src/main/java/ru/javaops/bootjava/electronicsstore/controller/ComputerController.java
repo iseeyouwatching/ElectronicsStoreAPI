@@ -5,8 +5,8 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import ru.javaops.bootjava.electronicsstore.dto.ComputerDto;
-import ru.javaops.bootjava.electronicsstore.dto.CreateUpdateComputerDto;
+import ru.javaops.bootjava.electronicsstore.model.dto.ComputerDto;
+import ru.javaops.bootjava.electronicsstore.model.dto.CreateUpdateComputerDto;
 import ru.javaops.bootjava.electronicsstore.service.implementation.ComputerService;
 
 import java.util.List;

@@ -1,25 +1,24 @@
-package ru.javaops.bootjava.electronicsstore.entity;
+package ru.javaops.bootjava.electronicsstore.model.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import ru.javaops.bootjava.electronicsstore.enumeration.LaptopSize;
 
 import java.util.UUID;
 
 @Entity
-@Table(name = "laptop")
+@Table(name = "monitor")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class LaptopEntity {
+public class MonitorEntity {
 
     @Id
     @GeneratedValue
     private UUID id;
 
-    private LaptopSize size;
+    private double diagonal;
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "product_id")

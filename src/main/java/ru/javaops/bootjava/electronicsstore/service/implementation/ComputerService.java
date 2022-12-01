@@ -2,17 +2,16 @@ package ru.javaops.bootjava.electronicsstore.service.implementation;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.javaops.bootjava.electronicsstore.dto.ComputerDto;
-import ru.javaops.bootjava.electronicsstore.dto.CreateUpdateComputerDto;
-import ru.javaops.bootjava.electronicsstore.dto.converter.ComputerDtoConverter;
+import ru.javaops.bootjava.electronicsstore.model.dto.ComputerDto;
+import ru.javaops.bootjava.electronicsstore.model.dto.CreateUpdateComputerDto;
+import ru.javaops.bootjava.electronicsstore.model.converter.ComputerDtoConverter;
 import ru.javaops.bootjava.electronicsstore.exception.NotFoundException;
-import ru.javaops.bootjava.electronicsstore.entity.ComputerEntity;
+import ru.javaops.bootjava.electronicsstore.model.entity.ComputerEntity;
 import ru.javaops.bootjava.electronicsstore.repository.ComputerRepository;
 import ru.javaops.bootjava.electronicsstore.service.IComputerService;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.UUID;
 
 @Service

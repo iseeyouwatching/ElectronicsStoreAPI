@@ -1,4 +1,4 @@
-package ru.javaops.bootjava.electronicsstore.dto;
+package ru.javaops.bootjava.electronicsstore.model.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

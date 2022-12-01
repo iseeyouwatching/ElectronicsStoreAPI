@@ -5,8 +5,8 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import ru.javaops.bootjava.electronicsstore.dto.CreateUpdateMonitorDto;
-import ru.javaops.bootjava.electronicsstore.dto.MonitorDto;
+import ru.javaops.bootjava.electronicsstore.model.dto.CreateUpdateMonitorDto;
+import ru.javaops.bootjava.electronicsstore.model.dto.MonitorDto;
 import ru.javaops.bootjava.electronicsstore.service.implementation.MonitorService;
 
 import java.util.List;

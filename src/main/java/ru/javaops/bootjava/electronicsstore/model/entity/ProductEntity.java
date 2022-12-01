@@ -1,4 +1,4 @@
-package ru.javaops.bootjava.electronicsstore.entity;
+package ru.javaops.bootjava.electronicsstore.model.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -18,7 +18,7 @@ public class ProductEntity {
     @GeneratedValue
     private UUID id;
 
-    @Column(name = "series_number", unique = true)
+    @Column(name = "series_number")
     private String seriesNumber;
 
     private String fabricator;

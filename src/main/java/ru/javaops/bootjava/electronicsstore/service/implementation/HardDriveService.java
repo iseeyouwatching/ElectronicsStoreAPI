@@ -2,10 +2,10 @@ package ru.javaops.bootjava.electronicsstore.service.implementation;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.javaops.bootjava.electronicsstore.dto.CreateUpdateHardDriveDto;
-import ru.javaops.bootjava.electronicsstore.dto.HardDriveDto;
-import ru.javaops.bootjava.electronicsstore.dto.converter.HardDriveDtoConverter;
-import ru.javaops.bootjava.electronicsstore.entity.HardDriveEntity;
+import ru.javaops.bootjava.electronicsstore.model.dto.CreateUpdateHardDriveDto;
+import ru.javaops.bootjava.electronicsstore.model.dto.HardDriveDto;
+import ru.javaops.bootjava.electronicsstore.model.converter.HardDriveDtoConverter;
+import ru.javaops.bootjava.electronicsstore.model.entity.HardDriveEntity;
 import ru.javaops.bootjava.electronicsstore.exception.NotFoundException;
 import ru.javaops.bootjava.electronicsstore.repository.HardDriveRepository;
 import ru.javaops.bootjava.electronicsstore.service.IHardDriveService;
